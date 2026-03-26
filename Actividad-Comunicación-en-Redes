@@ -1,0 +1,138 @@
+### 🧩 1. Conceptos base
+
+Completar tabla:
+
+| Concepto | Definición simple | Nivel técnico breve | Ejemplo real |
+| --- | --- | --- | --- |
+| TCP | Un sistema de envío que se asegura que todo llegue en orden | Protocolo que garantiza la entrega de datos entrega aplicaciones de una red. | Airdrop entre contactos |
+| UDP | Un sistema de envío rápido que no se detiene en revisar el estado del paquete | Protocolo de transporte ligero, rápido y sin conexión para envíar datos en redes IP | Envío Rápido de Buscalibre |
+| Puerto | La puerta especifica donde entra o sale información. | Punto final lógico que identifica un proceso específico en una red. | Las puertas del aeropuert |
+| HTTP | El lenguaje que usan el navegador y el servidor | Protocolo de capa de aplicación basado en petición-respuesta.  | lo que uno escribe antes de una dirección web |
+|  |  |  |  |
+
+👉 Reglas:
+
+- Máximo 3 líneas por celda
+- Debe ser entendible para alguien sin experiencia
+
+---
+
+### ⚙️ 2. TCP vs UDP (diferencia clave)
+
+Responder:
+
+- ¿Cuál es la principal diferencia entre TCP y UDP?
+    - La confirmación. TCP espera hasta un recibidp. UDP solo envía los datos.
+- ¿Cuál es más confiable? ¿por qué? TCP. Le hace track a los datos, si se pierden, los envía de nuevo.
+- ¿Cuál es más rápido? ¿por qué? UDP. No verifica la conexión ni la confirmación de recepción del paquete completo.
+
+👉 Completar:
+
+| Protocolo | Característica clave | Uso típico |
+| --- | --- | --- |
+| TCP | Confianza | Navegación web, transferencia de archivos. |
+| UDP | Velocidad  | Videollamadas,transmiciones en vivo. |
+
+---
+
+### 🚪 3. Puertos (clave en desarrollo)
+
+Responder:
+
+- ¿Qué es un puerto en una red?  Es lo que permite a un computador saber a donde van los datos.
+- ¿Por qué una aplicación necesita un puerto?
+    - Porque, sin puertos, la computadora no sabría a que programa entregar la información.
+- ¿Qué significan estos puertos?
+    - 80: Tráfico web normal
+    - 443: Tráfico web seguro
+    - 3000: servidores locales, aplicaciones hechas con React y Node.js
+    - 5432: Puerto predeterminado para PostgreSQL.
+
+👉 Ejemplo developer:
+
+- ¿Qué pasa cuando ejecutas:
+
+```
+npm run dev
+```
+
+Al ejecutarlo se abre una puerta en el servidor local para ver la web por esa entrada específica. 
+
+---
+
+### 🌐 4. HTTP (HyperText Transfer Protocol)
+
+Responder:
+
+- ¿Qué es HTTP? protocolo de capa de aplicación diseñado para transferir información entre dispositivos conectados a la red. Es la base de www.
+- ¿Cómo funciona una petición HTTP?
+    - cada solicitud lleva consigo una serie de datos codificados que continen distintos tipos de información
+- ¿Qué significan:
+    - GET: recibir información como respuesta.
+    - POST:el usuario envía información al servidor web.
+    - PUT: Crear nuevo recurso o reemplazar,
+    - DELETE: eliminar recurso específico
+
+👉 Explicar flujo:
+
+```
+Frontend → Request → Backend → Response → Frontend
+```
+
+El usuario apreta el botón comprar. El navegador envía una petición POST al servidor con los detalles del carrito. El servidor procesa la petición, valida el stock, y crea una “orden de pago” en su base de datos.  El servidor responde con un código y envía a la URL de la pasarela de pagos. El navegador recibe la respuesta, y al leer la URL, redirige al usuario a la pantalla de pago. 
+
+---
+
+### 💻 5. Conexión directa con desarrollo (CRÍTICO)
+
+Responder:
+
+- ¿Qué pasa cuando haces:
+
+```
+fetch("http://localhost:3000/api")
+```
+
+- ¿Qué protocolo se usa? Se usa HTTP
+- ¿Qué puerto? Se intenta conectar al puerto 3000, al servidor.
+- ¿Qué tipo de comunicación? Usuario-servidor local.
+
+---
+
+### 🚨 6. Problemas reales (debugging)
+
+Responder:
+
+- ¿Qué significa:
+    - “Port already in use”? Puerto ya en uso, otra aplicación esta usando el puerto.
+    - “Connection refused”? Conexión denegada, el servidor esta apagado o negaron la solicitud.
+    - “Timeout”? Mucho tiempo de conexión sin respuesta
+- ¿Qué revisarías como developer? Si el servidor esta encendido, si el puerto es el correcto, cerraría las intervenciones.
+
+---
+
+### 🌍 7. Caso práctico real
+
+Escenario:
+
+> “Tu frontend no se conecta al backend”
+> 
+
+Responder:
+
+- ¿Puede ser problema de puerto?
+- ¿Puede ser problema de protocolo?
+- ¿Puede ser problema de red?
+
+---
+
+### 🧪 8. Analogía obligatoria
+
+Crear analogía:
+
+| Concepto | Analogía |
+| --- | --- |
+| TCP | Biblioteca Municipales |
+| UDP | Bibliotecas Libres  |
+| Puerto | Sección por género  |
+| HTTP | Formulario de préstamo |
